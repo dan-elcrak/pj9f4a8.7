@@ -12,9 +12,9 @@ HOSTNAME = "pj9f4a87-grup01.fjeclot.net"
 # Usando la ruta relativa correcta a la carpeta base
 CARPETA_MAQ_FIS = ".." # Esto hace referencia a la carpeta pj9f4a8.7
 CARPETA_MAQ_VIR = "/home/aplicacions/pj9f4a8.7"
-PORT_VIR1 = 80
+#PORT_VIR1 = 80
 PORT_FIS1 = 8000
-PORT_VIR2 = 443
+#PORT_VIR2 = 443
 PORT_FIS2 = 8443
 PROT = "tcp" 
 
@@ -36,8 +36,8 @@ Vagrant.configure("2") do |config|
 	config.vm.hostname = HOSTNAME	
 	config.vm.synced_folder CARPETA_MAQ_FIS, CARPETA_MAQ_VIR
 	config.vm.network "public_network"	
-	config.vm.network "forwarded_port", guest: PORT_VIR1, host: PORT_FIS1, protocol: PROT
-	config.vm.network "forwarded_port", guest: PORT_VIR2, host: PORT_FIS2, protocol: PROT
+	#config.vm.network "forwarded_port", guest: PORT_VIR1, host: PORT_FIS1, protocol: PROT
+	#config.vm.network "forwarded_port", guest: PORT_VIR2, host: PORT_FIS2, protocol: PROT
 
 	# PROGRAMARI A INSTAL·LAR I ORDRES A EXECUTAR DURANT LA CREACIÓ DE LA MÀQUINA (PROVISION)
 	config.vm.provision "shell", inline: <<-SHELL
